@@ -6,7 +6,6 @@ export const createId = (): string => crypto.randomUUID();
 export const createDefaultGroup = (): Group => ({
   id: createId(),
   title: DEFAULT_GROUP_TITLE,
-  notes: "",
   todos: [],
 });
 

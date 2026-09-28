@@ -8,7 +8,6 @@ export type Todo = {
 export type Group = {
   id: string;
   title: string;
-  notes: string;
   todos: Todo[];
 };
 
