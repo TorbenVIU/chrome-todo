@@ -149,15 +149,6 @@ const App = () => {
     }));
   };
 
-  const handleNotesChange = (groupId: string, notes: string) => {
-    updateState((prev) => ({
-      ...prev,
-      groups: prev.groups.map((g) =>
-        g.id === groupId ? { ...g, notes } : g,
-      ),
-    }));
-  };
-
   const handleDownloadBackup = () => {
     exportBackup(state);
     updateState(markBackedUp);
@@ -172,7 +163,7 @@ const App = () => {
       return;
     }
     const confirmed = window.confirm(
-      "Replace all current todos and notes with this backup?",
+      "Replace all current todos with this backup?",
     );
     if (!confirmed) return;
     replaceState(parsed);
@@ -199,7 +190,6 @@ const App = () => {
               key={group.id}
               group={group}
               onTitleChange={(title) => handleTitleChange(group.id, title)}
-              onNotesChange={(notes) => handleNotesChange(group.id, notes)}
               onAddTodo={(text) => handleAddTodo(group.id, text)}
               onCompleteTodo={(todoId) =>
                 handleCompleteTodo(group.id, todoId)

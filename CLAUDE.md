@@ -36,7 +36,7 @@ Both persisted keys go through it: `APP_STATE_V1` (`storage/loadState.ts`, `stor
 
 ### State transformers
 
-Non-trivial mutations are pure `(prev: AppState, …args) => AppState` functions in their own module, imported into `App.tsx` and passed to `updateState`: `history/completeTodo.ts`, `history/deleteGroup.ts`, `groups/reorderGroups.ts`, `backup/markBackedUp.ts`. Trivial field edits (title, notes, add todo) are inline in `App.tsx`. Keep that split — anything with branching or cross-slice effects belongs in a module.
+Non-trivial mutations are pure `(prev: AppState, …args) => AppState` functions in their own module, imported into `App.tsx` and passed to `updateState`: `history/completeTodo.ts`, `history/deleteGroup.ts`, `groups/reorderGroups.ts`, `backup/markBackedUp.ts`. Trivial field edits (title, add todo) are inline in `App.tsx`. Keep that split — anything with branching or cross-slice effects belongs in a module.
 
 `App.tsx` is the only stateful container; components under `src/components/` are presentational and receive per-group closures as props.
 

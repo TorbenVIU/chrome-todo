@@ -1,6 +1,6 @@
 # Todo — Chrome new tab extension
 
-A minimal dark-mode todo list that replaces Chrome’s new tab page. Groups, notes, completed history, and JSON backup/restore.
+A minimal dark-mode todo list that replaces Chrome’s new tab page. Groups, completed history, and JSON backup/restore.
 
 ## Development
 
@@ -23,7 +23,7 @@ For UI work without rebuilding, `npm run dev` (Vite dev server) runs the full ap
 ## Features
 
 - Add todos with Enter; complete with checkbox (moves to recent history)
-- Multiple groups with editable titles and notes
+- Multiple groups with editable titles
 - Download / restore JSON backups
 - Reminder banner if no backup in 7 days
 
